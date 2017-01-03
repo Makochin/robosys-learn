@@ -34,6 +34,8 @@ static struct class *cls = NULL;
 
 static volatile u32 *gpio_base = NULL;
 
+#define SLEEP_TIME 150
+
 static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_t* pos)
 {
 	char c;
@@ -46,383 +48,386 @@ static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_
 		gpio_base[7] = 1 << 25;
 	else if(c == 'a' || c == 'A') {
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'b' || c == 'B') {
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'c' || c == 'C') {
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'd' || c == 'D') {
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'e' || c == 'E') {
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'f' || c == 'F') {
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'g' || c == 'G') {
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'h' || c == 'H') {
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'i' || c == 'I') {
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'j' || c == 'J') {
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'k' || c == 'K') {
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'l' || c == 'L') {
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'm' || c == 'M') {
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'n' || c == 'N') {
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'o' || c == 'O') {
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'p' || c == 'P') {
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'q' || c == 'Q') {
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'r' || c == 'R') {
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 's' || c == 'S') {
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 't' || c == 'T') {
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'u' || c == 'U') {
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'v' || c == 'V') {
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'w' || c == 'W') {
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'x' || c == 'X') {
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'y' || c == 'Y') {
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 	}
 	else if(c == 'z' || c == 'Z') {
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[7] = 1 << 25;
-		msleep(200);
+		msleep(SLEEP_TIME);
 		gpio_base[10] = 1 << 25;
-		msleep(600);
+		msleep(SLEEP_TIME*3);
+	}
+	else if(c == ' ') {
+		msleep(SLEEP_TIME*7);
 	}
 
         return 1;
